@@ -11,21 +11,76 @@ header {
     padding: 1rem 0;
 }
 
+/* Style général de la navbar */
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     text-align: center;
+    background-color: #23394d; /* Couleur de fond de la navbar */
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
+    position: relative;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease, width 0.3s ease;
+    width: 150px; /* Fixe une largeur pour uniformiser tous les boutons */
+    text-align: center;
 }
+
+nav ul li a:hover {
+    background-color: #34909f;
+    border-radius: 5px;
+}
+
+/* Style pour le menu déroulant */
+.navbar-dropdown-content {
+    display: none; /* Cache le menu par défaut */
+    position: absolute;
+    background-color: #34909f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    list-style: none;
+    top: 40px; /* Position sous le bouton principal */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: left;
+    min-width: 150px; /* Fixe une largeur identique à celle du bouton principal */
+}
+
+.navbar-dropdown-content li {
+    width: 100%;
+}
+
+.navbar-dropdown-content li a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    width: 150px; /* Fixe une largeur identique à celle du bouton principal */
+}
+
+.navbar-dropdown-content li a:hover {
+    background-color: #27787d;
+}
+
+/* Afficher le menu déroulant au survol */
+.navbar-dropdown:hover .navbar-dropdown-content {
+    display: block;
+}
+
 
 
 
