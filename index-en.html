@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="navbar-dropdown">
+                    <a class="navbar-btn" href="#">Download CV</a>
+                    <div class="navbar-dropdown-content">
+                        <a href="cv-english.pdf" target="_blank">CV in English</a>
+                        <a href="cv-french.pdf" target="_blank">CV in French</a>
+                    </div>
+                </li>
+                <li><a href="index.html" class="lang-btn">🇫🇷 Switch to French</a></li>
+                <li><a id="dark-mode-toggle">🌙 Mode sombre</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <script>
+        // Vérifier si un mode est déjà enregistré
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        const body = document.body;
+
+        function setDarkMode(enabled) {
+            if (enabled) {
+                body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+                darkModeToggle.innerText = "☀️ Mode clair";
+            } else {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+                darkModeToggle.innerText = "🌙 Mode sombre";
+            }
+        }
+
+        // Appliquer le mode stocké
+        if (localStorage.getItem("darkMode") === "enabled") {
+            setDarkMode(true);
+        }
+
+        // Événement de clic sur le bouton
+        darkModeToggle.addEventListener("click", () => {
+            setDarkMode(!body.classList.contains("dark-mode"));
+        });
+    </script>
+
+    
+    <section id="about">
+        <div class="about-container">
+            <h1>Welcome to my portfolio</h1>
+            <p>My name is Diego GARENAUX, a 2nd-year B.U.T Computer Science student.</p>
+            <p>Passionate about programming, web development, and always ready to take on new challenges.</p>
+        </div>
+    </section>
+
+    <section id="formation">
+        <h2>My Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="sophie.jpg" alt="Lycée Sophie Berthelot">
+                </div>
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <h4>General Baccalaureate - Mathematics Specialty</h4>
+                    <p>I obtained my high school diploma at Lycée Sophie Berthelot in Calais. This specialty allowed me to deepen my knowledge in mathematics and sciences.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="lens.jpg" alt="IUT de Lens">
+                </div>
+                <div class="timeline-content">
+                    <h3>Since September 2023</h3>
+                    <h4>Bachelor of Computer Science (B.U.T Informatique)</h4>
+                    <p>Currently in my 2nd year at the IUT of Lens, I am developing skills in programming, databases, and web development.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <section id="competences">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/web-development.webp" alt="Web Development">
+                </div>
+                <h3>Web Development</h3>
+                <p>HTML / CSS / PHP</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/development.png" alt="Development">
+                </div>
+                <h3>Programming</h3>
+                <p>Java / Python</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/framework.png" alt="Framework">
+                </div>
+                <h3>Frameworks</h3>
+                <p>Laravel / Bootstrap</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/database.png" alt="Database">
+                </div>
+                <h3>Databases</h3>
+                <p>PostgreSQL</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/networking.webp" alt="Networking">
+                </div>
+                <h3>Networking</h3>
+                <p>Routing</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/git.png" alt="Git">
+                </div>
+                <h3>Git</h3>
+                <p>Version Control</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/os.png" alt="Operating Systems">
+                </div>
+                <h3>Operating Systems</h3>
+                <p>Windows / Linux</p>
+            </div>
+        </div>
+    </section>
+    
+    
+   <section id="projets">
+    <h2>My Projects</h2>
+    <p>Here are some of my completed projects:</p>
+    <div class="projects-container">
+        <!-- Project 1 -->
+        <div class="project">
+            <img src="application-web.png" alt="Project 1">
+            <div class="project-content">
+                <h3>Laravel Application</h3>
+                <p>Development of a recipe management application using Laravel, PHP, HTML, CSS, and JavaScript. This project implements an MVC architecture and a user interface.</p>
+                <a href="https://github.com/Diego-Garenaux/mamy-lens" class="btn">
+                    See more <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project">
+            <img src="bomberman.avif" alt="Project 2">
+            <div class="project-content">
+                <h3>Bomberman</h3>
+                <p>Creation of a retro "Bomberman" game using Java and JavaFX. This project involves event handling, character animation, and creating a graphical user interface.</p>
+                <a href="https://github.com/Diego-Garenaux/bomberman" class="btn">
+                    See more <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project">
+            <img src="juste-prix.jpeg" alt="Project 3">
+            <div class="project-content">
+                <h3>Juste Price Amazon</h3>
+                <p>A website to play the "Just Price" game, using an API to fetch Amazon product prices and guess the prices. Developed with HTML, CSS, Python and Sqlite for the database.</p>
+                <a href="https://github.com/Diego-Garenaux/juste-prix" class="btn">
+                    See more <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Want to collaborate or learn more? Send me a message:</p>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>My Contact Details</h3>
+                <p><i class="fas fa-envelope"></i> Email: diegogarenaux@gmail.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +33 6 67 18 10 45</p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: Tilloy-lès-Mofflaines, France</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/diego-garenaux-ba3624339/" target="_blank" class="btn social-btn">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/votre-profil" target="_blank" class="btn social-btn">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="btn">Send <i class="fas fa-paper-plane"></i></button>
+    
+                <a href="mailto:diegogarenaux@gmail.com?subject=Contact via Portfolio" target="_blank" class="btn social-btn">
+                    <i class="fas fa-paper-plane"></i> Email Me
+                </a>
+            </form>
+        </div>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2025, Diego GARENAUX, Portfolio</p>
+    </footer>
+    
+</body>
+</html>
