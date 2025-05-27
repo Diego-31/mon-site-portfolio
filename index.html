@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="navbar-dropdown">
+                    <a class="navbar-btn" href="#">Télécharger CV</a>
+                    <div class="navbar-dropdown-content">
+                        <a href="cv-francais.pdf" target="_blank">CV en Français</a>
+                        <a href="cv-anglais.pdf" target="_blank">CV en Anglais</a>
+                    </div>
+                </li>
+                <!-- Bouton pour changer de langue -->
+                <li><a href="index-en.html" class="lang-btn">🇬🇧 Passer en anglais</a></li>
+                <!-- Bouton mode sombre -->
+        <li><a id="dark-mode-toggle">🌙 Mode sombre</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <script>
+        // Vérifier si un mode est déjà enregistré
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        const body = document.body;
+
+        function setDarkMode(enabled) {
+            if (enabled) {
+                body.classList.add("dark-mode");
+                localStorage.setItem("darkMode", "enabled");
+                darkModeToggle.innerText = "☀️ Mode clair";
+            } else {
+                body.classList.remove("dark-mode");
+                localStorage.setItem("darkMode", "disabled");
+                darkModeToggle.innerText = "🌙 Mode sombre";
+            }
+        }
+
+        // Appliquer le mode stocké
+        if (localStorage.getItem("darkMode") === "enabled") {
+            setDarkMode(true);
+        }
+
+        // Événement de clic sur le bouton
+        darkModeToggle.addEventListener("click", () => {
+            setDarkMode(!body.classList.contains("dark-mode"));
+        });
+    </script>
+
+
+
+    <section id="about">
+        <div class="about-container">
+            <h1>Bienvenue sur mon portfolio</h1>
+            <p>Je m'appelle Diego GARENAUX, étudiant en 2e année de B.U.T Informatique.</p>
+            <p>Passionné par la programmation, le développement web et toujours prêt à relever de nouveaux défis.</p>
+        </div>
+    </section>
+
+
+
+
+
+    <section id="formation">
+        <h2>Ma Formation</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="sophie.jpg" alt="Lycée Sophie Berthelot">
+                </div>
+                <div class="timeline-content">
+                    <h3>2023</h3>
+                    <h4>Baccalauréat Général - Spécialité Mathématiques</h4>
+                    <p>J'ai obtenu mon Bac au Lycée Sophie Berthelot à Calais. Cette spécialité m'a permis d'approfondir mes connaissances en mathématiques et sciences.</p>
+                </div>
+            </div>
+    
+            <div class="timeline-item">
+                <div class="timeline-icon">
+                    <img src="lens.jpg" alt="IUT de Lens">
+                </div>
+                <div class="timeline-content">
+                    <h3>Depuis Septembre 2023</h3>
+                    <h4>B.U.T Informatique</h4>
+                    <p>Actuellement en 2e année du B.U.T Informatique à l'IUT de Lens, je développe mes compétences en programmation, bases de données et développement web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="competences">
+        <h2>Mes Compétences</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/web-development.webp" alt="Développement Web">
+                </div>
+                <h3>Développement Web</h3>
+                <p>HTML / CSS / PHP</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/development.png" alt="Développement">
+                </div>
+                <h3>Développement</h3>
+                <p>Java / Python</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/framework.png" alt="Framework">
+                </div>
+                <h3>Framework</h3>
+                <p>Laravel / Bootstrap</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/database.png" alt="Base de données">
+                </div>
+                <h3>Base de Données</h3>
+                <p>PostgreSQL</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/networking.webp" alt="Réseaux">
+                </div>
+                <h3>Réseaux</h3>
+                <p>Routage</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/git.png" alt="Git">
+                </div>
+                <h3>Git</h3>
+                <p>Outil</p>
+            </div>
+            <div class="skill">
+                <div class="icon">
+                    <img src="icons/os.png" alt="Systèmes d'Exploitation">
+                </div>
+                <h3>Systèmes d'Exploitation</h3>
+                <p>Windows / Linux</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="projets">
+        <h2>Mes Projets</h2>
+        <p>Voici quelques-uns de mes projets réalisés :</p>
+        <div class="projects-container">
+            <!-- Projet 1 -->
+            <div class="project">
+                <img src="application-web.png" alt="Projet 1">
+                <div class="project-content">
+                    <h3>Application Laravel</h3>
+                    <p>Développement d'une application de gestion de recettes utilisant Laravel, PHP, HTML, CSS et JavaScript. Ce projet met en œuvre une architecture MVC et une interface utilisateur.</p>
+                    <a href="https://github.com/Diego-Garenaux/mamy-lens" class="btn">
+                        Voir plus <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Projet 2 -->
+            <div class="project">
+                <img src="bomberman.avif" alt="Projet 2">
+                <div class="project-content">
+                    <h3>Bomberman</h3>
+                    <p>Création d'un jeu vidéo rétro "Bomberman" en utilisant Java et JavaFX. Ce projet inclut la gestion des événements, l'animation des personnages et la création de l'interface graphique.</p>
+                    <a href="https://github.com/Diego-Garenaux/bomberman" class="btn">
+                        Voir plus <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Projet 3 -->
+            <div class="project">
+                <img src="juste-prix.jpeg" alt="Projet 3">
+                <div class="project-content">
+                    <h3>Juste Prix Amazon</h3>
+                    <p>Un site permettant de jouer au jeu "Juste Prix", en utilisant une API pour récupérer les prix d'Amazon et faire deviner les prix des produits. Développé en Python, HTML et CSS.</p>
+                    <a href="https://github.com/Diego-Garenaux/juste-prix" class="btn">
+                        Voir plus <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact">
+    <h2>Contactez-moi</h2>
+    <p>Vous souhaitez collaborer ou en savoir plus ? Envoyez-moi un message :</p>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Mes coordonnées</h3>
+            <p><i class="fas fa-envelope"></i> Email : diegogarenaux@gmail.com</p>
+            <p><i class="fas fa-phone"></i> Téléphone : +33 6 67 18 10 45</p>
+            <p><i class="fas fa-map-marker-alt"></i> Localisation : Tilloy-lès-Mofflaines, France</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/diego-garenaux-ba3624339/" target="_blank" class="btn social-btn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://www.instagram.com/votre-profil" target="_blank" class="btn social-btn">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+        <form action="#" method="POST" class="contact-form">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Envoyer <i class="fas fa-paper-plane"></i></button>
+
+            <a href="mailto:diegogarenaux@gmail.com?subject=Contact par portoflio" target="_blank" class="btn social-btn">
+                <i class="fas fa-paper-plane"></i> Contactez-moi
+            </a>
+        </form>
+        
+    </div>
+</section>
+
+    
+
+    <footer>
+        <p>&copy; 2025, Diego GARENAUX, Portfolio</p>
+    </footer>
+</body>
+</html>
