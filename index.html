@@ -5,32 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="script.js" defer></script>
+
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
 </head>
 <body>
 
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#formation">Formation</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="navbar-dropdown">
-                    <a class="navbar-btn" href="#">Télécharger CV</a>
-                    <div class="navbar-dropdown-content">
-                        <a href="cv-francais.pdf" target="_blank">CV en Français</a>
-                        <a href="cv-anglais.pdf" target="_blank">CV en Anglais</a>
-                    </div>
-                </li>
-                <!-- Bouton pour changer de langue -->
-                <li><a href="index-en.html" class="lang-btn">🇬🇧 Passer en anglais</a></li>
-                <!-- Bouton mode sombre -->
-        <li><a id="dark-mode-toggle">🌙 Mode sombre</a></li>
-            </ul>
-        </nav>
-        
-    </header>
+  <nav>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#formation">Formation</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+    </ul>
+    <li class="navbar-dropdown">
+  <a href="#" class="navbar-btn">Voir mon CV ▼</a>
+  <div class="navbar-dropdown-content">
+    <a href="cv-francais.pdf" target="_blank">Télécharger CV (FR)</a>
+    <a href="cv-anglais.pdf" target="_blank">Télécharger CV (EN)</a>
+  </div>
+</li>
+
+    <div class="navbar-actions">
+      <div class="lang-toggle">
+        <img src="flag-fr.jpg" alt="FR" id="lang-toggle" />
+      </div>
+      <button id="dark-mode-toggle">
+        <i class="fas fa-sun"></i> <!-- Ou fa-moon si dark mode -->
+      </button>
+    </div>
+  </nav>
+</header>
+
 
     <script>
         // Vérifier si un mode est déjà enregistré
@@ -62,19 +93,19 @@
 
 
 
-    <section id="about">
-        <div class="about-container">
-            <h1>Bienvenue sur mon portfolio</h1>
-            <p>Je m'appelle Diego GARENAUX, étudiant en 2e année de B.U.T Informatique.</p>
-            <p>Passionné par la programmation, le développement web et toujours prêt à relever de nouveaux défis.</p>
-        </div>
-    </section>
+    <section id="about" class="hero-banner">
+    <div class="about-container">
+        <h1>Bienvenue sur mon portfolio</h1>
+        <p>Je suis Diego GARENAUX, étudiant en B.U.T Informatique passionné par le web.</p>
+    </div>
+</section>
 
 
 
 
 
-    <section id="formation">
+
+    <section id="formation"  class="fade-in">
         <h2>Ma Formation</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -103,7 +134,7 @@
     
     
 
-    <section id="competences">
+    <section id="competences"  class="fade-in">
         <h2>Mes Compétences</h2>
         <div class="skills-container">
             <div class="skill">
@@ -159,7 +190,7 @@
     </section>
     
 
-    <section id="projets">
+    <section id="projets"  class="fade-in">
         <h2>Mes Projets</h2>
         <p>Voici quelques-uns de mes projets réalisés :</p>
         <div class="projects-container">
@@ -201,43 +232,28 @@
     
     
 
-    <section id="contact">
+    <section id="contact"  class="fade-in">
     <h2>Contactez-moi</h2>
     <p>Vous souhaitez collaborer ou en savoir plus ? Envoyez-moi un message :</p>
     <div class="contact-container">
         <div class="contact-info">
             <h3>Mes coordonnées</h3>
             <p><i class="fas fa-envelope"></i> Email : diegogarenaux@gmail.com</p>
+            <a href="mailto:diegogarenaux@gmail.com?subject=Contact par portoflio" target="_blank" class="btn social-btn">
+                <i class="fas fa-paper-plane"></i> Contactez-moi
+            </a>
             <p><i class="fas fa-phone"></i> Téléphone : +33 6 67 18 10 45</p>
             <p><i class="fas fa-map-marker-alt"></i> Localisation : Tilloy-lès-Mofflaines, France</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/diego-garenaux-ba3624339/" target="_blank" class="btn social-btn">
                     <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="https://www.instagram.com/votre-profil" target="_blank" class="btn social-btn">
+                <a href="https://www.instagram.com/diegogarenaux13" target="_blank" class="btn social-btn">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
             </div>
         </div>
-        <form action="#" method="POST" class="contact-form">
-            <div class="form-group">
-                <label for="name">Nom</label>
-                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
-            </div>
-            <button type="submit" class="btn">Envoyer <i class="fas fa-paper-plane"></i></button>
-
-            <a href="mailto:diegogarenaux@gmail.com?subject=Contact par portoflio" target="_blank" class="btn social-btn">
-                <i class="fas fa-paper-plane"></i> Contactez-moi
-            </a>
-        </form>
+        
         
     </div>
 </section>

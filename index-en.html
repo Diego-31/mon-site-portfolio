@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -18,16 +22,23 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="navbar-dropdown">
-                    <a class="navbar-btn" href="#">Download CV</a>
-                    <div class="navbar-dropdown-content">
-                        <a href="cv-english.pdf" target="_blank">CV in English</a>
-                        <a href="cv-french.pdf" target="_blank">CV in French</a>
-                    </div>
-                </li>
-                <li><a href="index.html" class="lang-btn">🇫🇷 Switch to French</a></li>
-                <li><a id="dark-mode-toggle">🌙 Mode sombre</a></li>
             </ul>
+            <li class="navbar-dropdown">
+  <a href="#" class="navbar-btn">See my CV ▼</a>
+  <div class="navbar-dropdown-content">
+    <a href="cv-francais.pdf" target="_blank">Download CV (FR)</a>
+    <a href="cv-anglais.pdf" target="_blank">Download CV (EN)</a>
+  </div>
+</li>
+
+            <div class="navbar-actions">
+      <div class="lang-toggle">
+        <img src="flag-en.jpg" alt="EN" id="lang-toggle" />
+      </div>
+      <button id="dark-mode-toggle">
+        <i class="fas fa-sun"></i> <!-- Ou fa-moon si dark mode -->
+      </button>
+    </div>
         </nav>
         
     </header>
@@ -202,36 +213,21 @@
             <div class="contact-info">
                 <h3>My Contact Details</h3>
                 <p><i class="fas fa-envelope"></i> Email: diegogarenaux@gmail.com</p>
+                <a href="mailto:diegogarenaux@gmail.com?subject=Contact via Portfolio" target="_blank" class="btn social-btn">
+                    <i class="fas fa-paper-plane"></i> Email Me
+                </a>
                 <p><i class="fas fa-phone"></i> Phone: +33 6 67 18 10 45</p>
                 <p><i class="fas fa-map-marker-alt"></i> Location: Tilloy-lès-Mofflaines, France</p>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/diego-garenaux-ba3624339/" target="_blank" class="btn social-btn">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://www.instagram.com/votre-profil" target="_blank" class="btn social-btn">
+                    <a href="https://www.instagram.com/diegogarenaux13" target="_blank" class="btn social-btn">
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                 </div>
             </div>
-            <form action="#" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
-                </div>
-                <button type="submit" class="btn">Send <i class="fas fa-paper-plane"></i></button>
-    
-                <a href="mailto:diegogarenaux@gmail.com?subject=Contact via Portfolio" target="_blank" class="btn social-btn">
-                    <i class="fas fa-paper-plane"></i> Email Me
-                </a>
-            </form>
+            
         </div>
     </section>
     
